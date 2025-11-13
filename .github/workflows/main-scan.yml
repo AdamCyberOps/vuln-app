@@ -12,3 +12,6 @@ jobs:
     uses: AdamCyberOps/.github/.github/workflows/security-scan.yml@main
     with:
       run_branch: ${{ github.ref_name }}
+      base_ref: main
+      head_ref: ${{ github.ref_name }}
+
