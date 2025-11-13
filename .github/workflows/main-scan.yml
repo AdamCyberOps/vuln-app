@@ -1,15 +1,17 @@
-name: Main Branch Security Scan
+name: Run Org Security Scan
 
-# Trigger scan on push to main branch
 on:
   push:
-    branches:
-      - main
+    branches: [ developer, main ]
+  pull_request:
+    branches: [ developer, main ]
+  workflow_dispatch:
 
 jobs:
-  scan:
-    # Reuse the centralized workflow in your org's .github repo
+  call-org-scan:
     uses: AdamCyberOps/.github/.github/workflows/security-scan.yml@main
     with:
-      repo-name: vuln-app
-    secrets: inherit
+      run_branch: ${{ github.ref_name }}
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
