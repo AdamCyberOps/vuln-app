@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-org-scan:
-    uses: AdamCyberOps/.github/workflows/security-scan.yml@main
+    uses: AdamCyberOps/.github/.github/workflows/security-scan.yml@main
     with:
       run_branch: ${{ github.ref_name }}
     secrets:
