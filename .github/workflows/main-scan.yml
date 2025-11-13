@@ -9,7 +9,7 @@ on:
 jobs:
   scan:
     # Reuse the centralized workflow in your org's .github repo
-    uses: AdamCyberOps/.github/workflows/main-scan.yml@main
+    uses: AdamCyberOps/.github/.github/workflows/security-scan.yml@main
     with:
       repo-name: vuln-app
     secrets: inherit
